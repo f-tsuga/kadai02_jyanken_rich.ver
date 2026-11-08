@@ -258,13 +258,31 @@ footer {
     margin-top: 15px;
 }
 
+/* =====================================
+   今日の一歩ガチャ：結果を目立たせる
+===================================== */
+
 #action-message {
-    background-color: #eef5ff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 25px;
-    font-weight: bold;
     display: none;
+
+    /* 背景と枠線 */
+    background-color: #eef5ff;
+    border: 2px solid #2563eb;
+    border-radius: 14px;
+
+    /* 文字 */
+    color: #183153;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.8;
+    text-align: center;
+
+    /* 余白 */
+    padding: 35px 25px;
+    margin-top: 25px;
+
+    /* 立体感 */
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
 }
 
 /* =====================================
