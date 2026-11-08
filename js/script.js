@@ -139,98 +139,99 @@ $("#check").on("click", function () {
 
 
 
-// =====================================
-// 9. 今日の一歩ガチャ
-// =====================================
+    // =====================================
+    // 9. 今日の一歩ガチャ
+    // =====================================
 
-// 診断が完了したらガチャを表示する
-$("#gacha").show();
+    // 診断が完了したらガチャを表示する
+    $("#gacha").show();
 
-// 前回のガチャ結果を隠す
-$("#action-message").hide();
+    // 前回のガチャ結果を隠す
+    $("#action-message").hide();
 
-// ガチャボタンが押されたときの処理
-$("#draw-action").off("click").on("click", function () {
+    // ガチャボタンが押されたときの処理
+    $("#draw-action").off("click").on("click", function () {
 
-    // 0・1・2のいずれかの乱数を作る
-    const random = Math.floor(Math.random() * 3);
+        // 0・1・2のいずれかの乱数を作る
+        const random = Math.floor(Math.random() * 3);
 
-    // 表示するアクションを保存する変数
-    let action = "";
+        // 表示するアクションを保存する変数
+        let action = "";
 
-    // 最も点数が低い観点によって分岐する
+        // 最も点数が低い観点によって分岐する
 
-    if (weakPoint === "仕事の意義") {
+        if (weakPoint === "仕事の意義") {
 
-        if (random === 0) {
-            action = "自分の仕事が誰の役に立っているか考えてみよう";
-        } else if (random === 1) {
-            action = "今日の仕事で生み出した価値を1つ書いてみよう";
+            if (random === 0) {
+                action = "自分の仕事が誰の役に立っているか考えてみよう";
+            } else if (random === 1) {
+                action = "今日の仕事で生み出した価値を1つ書いてみよう";
+            } else {
+                action = "仕事の目的について同僚と話してみよう";
+            }
+
+        } else if (weakPoint === "成長実感") {
+
+            if (random === 0) {
+                action = "今日学んだことを1つメモしてみよう";
+            } else if (random === 1) {
+                action = "いつもと違う仕事のやり方を試してみよう";
+            } else {
+                action = "最近できるようになったことを振り返ろう";
+            }
+
+        } else if (weakPoint === "強みの発揮") {
+
+            if (random === 0) {
+                action = "自分の得意なことを3つ書き出そう";
+            } else if (random === 1) {
+                action = "自分の強みを使って誰かを助けてみよう";
+            } else {
+                action = "最近感謝された仕事を思い出してみよう";
+            }
+
+        } else if (weakPoint === "主体性") {
+
+            if (random === 0) {
+                action = "自分で決められることを1つ見つけよう";
+            } else if (random === 1) {
+                action = "いつもの仕事の進め方を1つ変えてみよう";
+            } else {
+                action = "小さな改善案を1つ提案してみよう";
+            }
+
+        } else if (weakPoint === "仕事への意欲") {
+
+            if (random === 0) {
+                action = "今日少しでも楽しかった仕事を振り返ろう";
+            } else if (random === 1) {
+                action = "興味のあることを5分だけ調べてみよう";
+            } else {
+                action = "明日楽しみにできることを1つ考えよう";
+            }
+
         } else {
-            action = "仕事の目的について同僚と話してみよう";
+
+            // 全観点が満点の場合
+            if (random === 0) {
+                action = "今の良い状態を支える習慣を1つ書き出そう";
+            } else if (random === 1) {
+                action = "自分の強みを誰かのために使ってみよう";
+            } else {
+                action = "次に挑戦したいことを1つ考えてみよう";
+            }
         }
 
-    } else if (weakPoint === "成長実感") {
+        // ガチャの結果を表示
+        $("#action-message").text(action);
+        // フェードインで表示
+        $("#action-message").hide().fadeIn(400);
 
-        if (random === 0) {
-            action = "今日学んだことを1つメモしてみよう";
-        } else if (random === 1) {
-            action = "いつもと違う仕事のやり方を試してみよう";
-        } else {
-            action = "最近できるようになったことを振り返ろう";
-        }
+        // コンソールで確認
+        console.log("乱数:", random);
+        console.log("今日の一歩:", action);
 
-    } else if (weakPoint === "強みの発揮") {
-
-        if (random === 0) {
-            action = "自分の得意なことを3つ書き出そう";
-        } else if (random === 1) {
-            action = "自分の強みを使って誰かを助けてみよう";
-        } else {
-            action = "最近感謝された仕事を思い出してみよう";
-        }
-
-    } else if (weakPoint === "主体性") {
-
-        if (random === 0) {
-            action = "自分で決められることを1つ見つけよう";
-        } else if (random === 1) {
-            action = "いつもの仕事の進め方を1つ変えてみよう";
-        } else {
-            action = "小さな改善案を1つ提案してみよう";
-        }
-
-    } else if (weakPoint === "仕事への意欲") {
-
-        if (random === 0) {
-            action = "今日少しでも楽しかった仕事を振り返ろう";
-        } else if (random === 1) {
-            action = "興味のあることを5分だけ調べてみよう";
-        } else {
-            action = "明日楽しみにできることを1つ考えよう";
-        }
-
-    } else {
-
-        // 全観点が満点の場合
-        if (random === 0) {
-            action = "今の良い状態を支える習慣を1つ書き出そう";
-        } else if (random === 1) {
-            action = "自分の強みを誰かのために使ってみよう";
-        } else {
-            action = "次に挑戦したいことを1つ考えてみよう";
-        }
-    }
-
-    // ガチャの結果を表示
-    $("#action-message").text(action);
-    $("#action-message").show();
-
-    // コンソールで確認
-    console.log("乱数:", random);
-    console.log("今日の一歩:", action);
-
-});
+    });
 });
 
 // =====================================
