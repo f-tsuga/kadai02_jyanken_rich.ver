@@ -266,3 +266,102 @@ footer {
     font-weight: bold;
     display: none;
 }
+
+/* =====================================
+   UI改善① 大きなYES／NOボタン
+===================================== */
+
+/* YESとNOを横並びにする */
+.choices {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* 選択肢を同じ幅にする */
+.choices label {
+    flex: 1;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* 元のラジオボタンを透明にする */
+.choices input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* YES／NOを大きなボタンにする */
+.choices span {
+    display: block;
+    padding: 16px;
+    text-align: center;
+    border: 2px solid #d5deea;
+    border-radius: 10px;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* =====================================
+   UI改善② 選択状態を色分け
+===================================== */
+
+/* 選択したボタンを青色にする */
+.choices input:checked+span {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* 回答済みの質問全体を薄い青色にする */
+.question:has(input:checked) {
+    background-color: #eef5ff;
+    border-color: #2563eb;
+}
+
+/* キーボードで選択するときの目印 */
+.choices input:focus-visible+span {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+
+/* =====================================
+   UI改善③ 回答進捗ゲージ
+===================================== */
+
+/* 進捗エリア全体 */
+.progress-area {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* 進捗の文字 */
+.progress-area p {
+    margin-top: 0;
+    font-weight: bold;
+    color: #183153;
+}
+
+/* ゲージの背景 */
+.progress-bg {
+    width: 100%;
+    height: 12px;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 青い進捗ゲージ */
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #2563eb;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
