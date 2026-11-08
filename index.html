@@ -254,23 +254,24 @@
     <div class="button-area"><button id="check" type="button">診断する</button></div>
     <!-- JavaScriptが診断結果をここに表示する -->
     <section id="result" aria-live="polite"></section>
+
+    <!-- 今日の一歩ガチャ（main内に置いて他の要素と横幅を揃える） -->
+    <section id="gacha">
+
+      <h2>今日の一歩ガチャ</h2>
+
+      <p>あなたにおすすめの小さな行動を提案します。</p>
+
+      <button id="draw-action" type="button">
+        今日の一歩を引く
+      </button>
+
+      <!-- ガチャの結果を表示する場所 -->
+      <p id="action-message"></p>
+
+    </section>
   </main>
   <footer>※学習用の簡易セルフチェックです。心理学的に検証された尺度や人事評価には使用しないでください。</footer>
-  <!-- 今日の一歩ガチャ -->
-  <section id="gacha">
-
-    <h2>今日の一歩ガチャ</h2>
-
-    <p>あなたにおすすめの小さな行動を提案します。</p>
-
-    <button id="draw-action" type="button">
-      今日の一歩を引く
-    </button>
-
-    <!-- ガチャの結果を表示する場所 -->
-    <p id="action-message"></p>
-
-  </section>
 
   <!-- jQueryを読み込んだ後に自作のJavaScriptを読み込む -->
   <script src="js/script.js"></script>
