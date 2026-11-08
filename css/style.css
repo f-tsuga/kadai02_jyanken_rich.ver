@@ -357,6 +357,10 @@ footer {
     margin-bottom: 25px;
     border-radius: 10px;
     border: 1px solid #ddd;
+     /* 進捗結果を常駐させる */
+    position: sticky;/* スクロール時に指定位置へ固定 */
+    top: 0;/* 画面の上端に固定する */
+    z-index: 100;/* 質問カードより手前に表示 */
 }
 
 /* 進捗の文字 */
