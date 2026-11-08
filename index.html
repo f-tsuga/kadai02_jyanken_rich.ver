@@ -24,6 +24,25 @@
       <p><span class="phrase">各質問について、今の自分に近い方を選んでください。</span><span class="phrase">すべて回答したら「診断する」を押してください。</span></p>
     </section>
 
+    <!-- 回答進捗エリア -->
+
+    <div class="progress-area">
+
+      <p>
+        回答進捗：
+        <span id="progress-text">0 / 10問</span>
+      </p>
+
+      <!-- 進捗ゲージの背景 -->
+      <div class="progress-bg">
+
+        <!-- 進捗ゲージの青い部分 -->
+        <div id="progress-bar"></div>
+
+      </div>
+
+    </div>
+
     <!-- 各質問のvalueは「エンゲージメントが高い回答＝1点」になるように設定 -->
     <section class="questions" aria-label="10個の質問">
       <h2>01 <span>仕事の意義</span></h2>
