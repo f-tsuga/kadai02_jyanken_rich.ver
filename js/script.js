@@ -232,3 +232,28 @@ $("#draw-action").off("click").on("click", function () {
 
 });
 });
+
+// =====================================
+// 回答進捗を表示する
+// =====================================
+
+// ラジオボタンの回答が変更されたとき
+$('input[type="radio"]').on("change", function () {
+
+    // 回答済みの質問数を取得
+    const count = $('input[type="radio"]:checked').length;
+
+    // 回答数を画面に表示
+    $("#progress-text").text(count + " / 10問");
+
+    // 回答数をパーセントに変換
+    const percent = count * 10;
+
+    // 進捗ゲージの横幅を変更
+    $("#progress-bar").css("width", percent + "%");
+
+    // コンソールで確認
+    console.log("回答済み:", count);
+    console.log("進捗率:", percent + "%");
+
+});
